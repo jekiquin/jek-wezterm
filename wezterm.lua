@@ -19,10 +19,8 @@ config.font_size = 10.0
 
 config.use_dead_keys = false
 config.scrollback_lines = 5000
-
 config.adjust_window_size_when_changing_font_size = false
 config.hide_tab_bar_if_only_one_tab = true
-
 config.window_padding = {
 	left = "0cell",
 	right = "0cell",
@@ -40,7 +38,7 @@ config.background = {
 		vertical_align = "Middle",
 		horizontal_align = "Center",
 		hsb = {
-			brightness = 0.1,
+			brightness = 0.05,
 		},
 	},
 }
