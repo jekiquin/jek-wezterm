@@ -43,7 +43,7 @@ config.background = {
 	},
 }
 
-config.leader = { key = "Space", mods = "CTRL", timeout_milliseconds = 2000 }
+config.leader = { key = "Space", mods = "CTRL", timeout_milliseconds = 1000 }
 config.keys = {
 	{ key = "+", mods = "CTRL|SHIFT", action = act.IncreaseFontSize },
 	{ key = "-", mods = "CTRL|SHIFT", action = act.DecreaseFontSize },
