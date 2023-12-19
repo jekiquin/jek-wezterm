@@ -52,6 +52,8 @@ config.keys = {
 	{ key = "f", mods = "LEADER", action = act.SplitHorizontal({ domain = "CurrentPaneDomain" }) },
 	{ key = "h", mods = "LEADER", action = act.ActivatePaneDirection("Left") },
 	{ key = "l", mods = "LEADER", action = act.ActivatePaneDirection("Right") },
+	{ key = "j", mods = "LEADER", action = act.ActivatePaneDirection("Down") },
+	{ key = "k", mods = "LEADER", action = act.ActivatePaneDirection("Up") },
 	{ key = "t", mods = "LEADER", action = act.SpawnTab("CurrentPaneDomain") },
 	{ key = "x", mods = "LEADER", action = act.CloseCurrentPane({ confirm = false }) },
 }
