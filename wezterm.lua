@@ -32,7 +32,7 @@ config.enable_scroll_bar = false
 config.background = {
 	{
 		source = {
-			File = "./background/pxfuel.png",
+			File = "./background/background.png",
 		},
 		repeat_x = "NoRepeat",
 		vertical_align = "Middle",
