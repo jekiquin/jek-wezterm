@@ -40,7 +40,7 @@ config.enable_scroll_bar = false
 config.background = {
 	{
 		source = {
-			File = "./background/background.png",
+			File = wezterm.config_dir .. "/background/background.png",
 		},
 		repeat_x = "NoRepeat",
 		vertical_align = "Middle",
