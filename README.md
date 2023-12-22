@@ -15,3 +15,5 @@ function prompt {
     "${osc7}PS $p$('>' * ($nestedPromptLevel + 1)) ";
 }
 ```
+
+To be able to run wezterm commands on the terminal, add this path to windows path on the environment variables

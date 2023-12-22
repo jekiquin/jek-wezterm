@@ -59,6 +59,7 @@ config.keys = {
 	{ key = "k", mods = "LEADER", action = act.ActivatePaneDirection("Up") },
 	{ key = "t", mods = "LEADER", action = act.SpawnTab("CurrentPaneDomain") },
 	{ key = "x", mods = "LEADER", action = act.CloseCurrentPane({ confirm = false }) },
+	{ key = "p", mods = "LEADER", action = act.ActivateCommandPalette },
 
 	-- workspaces
 	{
