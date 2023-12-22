@@ -3,14 +3,14 @@ local act = wezterm.action
 local mux = wezterm.mux
 local config = {}
 
-wezterm.on('gui-attached', function(domain) 
-  -- maximize all displayed windows on startup
-  local workspace = mux.get_active_workspace()
-  for _, window in ipairs(mux.all_windows()) do 
-    if window:get_workspace() == workspace then 
-      window:gui_window():maximize()
-    end
-  end
+wezterm.on("gui-attached", function(domain)
+	-- maximize all displayed windows on startup
+	local workspace = mux.get_active_workspace()
+	for _, window in ipairs(mux.all_windows()) do
+		if window:get_workspace() == workspace then
+			window:gui_window():maximize()
+		end
+	end
 end)
 
 wezterm.on("update-right-status", function(window, pane)
@@ -56,8 +56,8 @@ config.keys = {
 	{ key = "+", mods = "CTRL|SHIFT", action = act.IncreaseFontSize },
 	{ key = "-", mods = "CTRL|SHIFT", action = act.DecreaseFontSize },
 	{ key = "0", mods = "CTRL|SHIFT", action = act.ResetFontSize },
-	{ key = "d", mods = "LEADER", action = act.SplitVertical({ domain = "CurrentPaneDomain" }) },
-	{ key = "f", mods = "LEADER", action = act.SplitHorizontal({ domain = "CurrentPaneDomain" }) },
+	{ key = "h", mods = "CTRL|SHIFT", action = act.SplitVertical({ domain = "CurrentPaneDomain" }) },
+	{ key = "v", mods = "CTRL|SHIFT", action = act.SplitHorizontal({ domain = "CurrentPaneDomain" }) },
 	{ key = "h", mods = "LEADER", action = act.ActivatePaneDirection("Left") },
 	{ key = "l", mods = "LEADER", action = act.ActivatePaneDirection("Right") },
 	{ key = "j", mods = "LEADER", action = act.ActivatePaneDirection("Down") },
