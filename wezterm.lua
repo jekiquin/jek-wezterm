@@ -53,17 +53,18 @@ config.background = {
 
 config.leader = { key = "Space", mods = "CTRL", timeout_milliseconds = 1000 }
 config.keys = {
-	{ key = "+", mods = "CTRL|SHIFT", action = act.IncreaseFontSize },
-	{ key = "-", mods = "CTRL|SHIFT", action = act.DecreaseFontSize },
-	{ key = "0", mods = "CTRL|SHIFT", action = act.ResetFontSize },
-	{ key = "d", mods = "LEADER", action = act.SplitVertical({ domain = "CurrentPaneDomain" }) },
-	{ key = "r", mods = "LEADER", action = act.SplitHorizontal({ domain = "CurrentPaneDomain" }) },
+	{ key = "-", mods = "CTRL|ALT", action = act.SplitVertical({ domain = "CurrentPaneDomain" }) },
+	{ key = "=", mods = "CTRL|ALT", action = act.SplitHorizontal({ domain = "CurrentPaneDomain" }) },
+	{ key = "q", mods = "CTRL|ALT", action = act.CloseCurrentPane({ confirm = false }) },
+	{ key = "h", mods = "CTRL|ALT", action = act.AdjustPaneSize {"Left",5} },
+	{ key = "l", mods = "CTRL|ALT", action = act.AdjustPaneSize {"Right",5} },
+	{ key = "j", mods = "CTRL|ALT", action = act.AdjustPaneSize {"Down",5} },
+	{ key = "k", mods = "CTRL|ALT", action = act.AdjustPaneSize {"Up",5} },
 	{ key = "h", mods = "LEADER", action = act.ActivatePaneDirection("Left") },
 	{ key = "l", mods = "LEADER", action = act.ActivatePaneDirection("Right") },
 	{ key = "j", mods = "LEADER", action = act.ActivatePaneDirection("Down") },
 	{ key = "k", mods = "LEADER", action = act.ActivatePaneDirection("Up") },
 	{ key = "t", mods = "LEADER", action = act.SpawnTab("CurrentPaneDomain") },
-	{ key = "x", mods = "LEADER", action = act.CloseCurrentPane({ confirm = false }) },
 	{ key = "p", mods = "LEADER", action = act.ActivateCommandPalette },
 
 	-- workspaces
