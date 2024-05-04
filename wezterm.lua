@@ -23,8 +23,16 @@ config.exit_behavior = "Close"
 
 config.color_scheme = "Hardcore"
 
-config.font = wezterm.font("MesloLGL Nerd Font")
-config.font_size = 10.0
+config.font = wezterm.font_with_fallback({
+	{
+		family = "Fira Code",
+		harfbuzz_features = { "cv01", "cv02", "cv04", "cv08", "ss05", "ss04", "cv18", "ss03", "cv16" },
+	},
+	"MesloLGL Nerd Font",
+})
+config.font_size = 11.0
+
+
 
 config.use_dead_keys = false
 config.scrollback_lines = 5000
