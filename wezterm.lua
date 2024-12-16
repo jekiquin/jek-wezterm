@@ -61,13 +61,13 @@ config.background = {
 
 config.leader = { key = "Space", mods = "CTRL", timeout_milliseconds = 1000 }
 config.keys = {
-	{ key = "-", mods = "CTRL|ALT", action = act.SplitVertical({ domain = "CurrentPaneDomain" }) },
-	{ key = "=", mods = "CTRL|ALT", action = act.SplitHorizontal({ domain = "CurrentPaneDomain" }) },
-	{ key = "q", mods = "CTRL|ALT", action = act.CloseCurrentPane({ confirm = false }) },
-	{ key = "h", mods = "CTRL|ALT", action = act.AdjustPaneSize {"Left",5} },
-	{ key = "l", mods = "CTRL|ALT", action = act.AdjustPaneSize {"Right",5} },
-	{ key = "j", mods = "CTRL|ALT", action = act.AdjustPaneSize {"Down",5} },
-	{ key = "k", mods = "CTRL|ALT", action = act.AdjustPaneSize {"Up",5} },
+	{ key = "-", mods = "CTRL|ALT|SHIFT", action = act.SplitVertical({ domain = "CurrentPaneDomain" }) },
+	{ key = "=", mods = "CTRL|ALT|SHIFT", action = act.SplitHorizontal({ domain = "CurrentPaneDomain" }) },
+	{ key = "q", mods = "CTRL|ALT|SHIFT", action = act.CloseCurrentPane({ confirm = false }) },
+	{ key = "h", mods = "CTRL|ALT|SHIFT", action = act.AdjustPaneSize {"Left",5} },
+	{ key = "l", mods = "CTRL|ALT|SHIFT", action = act.AdjustPaneSize {"Right",5} },
+	{ key = "j", mods = "CTRL|ALT|SHIFT", action = act.AdjustPaneSize {"Down",5} },
+	{ key = "k", mods = "CTRL|ALT|SHIFT", action = act.AdjustPaneSize {"Up",5} },
 	{ key = "h", mods = "LEADER", action = act.ActivatePaneDirection("Left") },
 	{ key = "l", mods = "LEADER", action = act.ActivatePaneDirection("Right") },
 	{ key = "j", mods = "LEADER", action = act.ActivatePaneDirection("Down") },
