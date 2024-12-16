@@ -61,8 +61,8 @@ config.background = {
 
 config.leader = { key = "Space", mods = "CTRL", timeout_milliseconds = 1000 }
 config.keys = {
-	{ key = "-", mods = "CTRL|ALT|SHIFT", action = act.SplitVertical({ domain = "CurrentPaneDomain" }) },
-	{ key = "=", mods = "CTRL|ALT|SHIFT", action = act.SplitHorizontal({ domain = "CurrentPaneDomain" }) },
+	{ key = "v", mods = "CTRL|ALT|SHIFT", action = act.SplitVertical({ domain = "CurrentPaneDomain" }) },
+	{ key = "b", mods = "CTRL|ALT|SHIFT", action = act.SplitHorizontal({ domain = "CurrentPaneDomain" }) },
 	{ key = "q", mods = "CTRL|ALT|SHIFT", action = act.CloseCurrentPane({ confirm = false }) },
 	{ key = "h", mods = "CTRL|ALT|SHIFT", action = act.AdjustPaneSize {"Left",5} },
 	{ key = "l", mods = "CTRL|ALT|SHIFT", action = act.AdjustPaneSize {"Right",5} },
