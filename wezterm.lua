@@ -3,14 +3,12 @@ local act = wezterm.action
 local mux = wezterm.mux
 local config = {}
 
-wezterm.on("gui-attached", function(domain)
-	-- maximize all displayed windows on startup
-	local workspace = mux.get_active_workspace()
-	for _, window in ipairs(mux.all_windows()) do
-		if window:get_workspace() == workspace then
-			window:gui_window():maximize()
-		end
-	end
+wezterm.on("gui-startup", function()
+	-- this is to ensure that the current domain is properly initialized
+	local _, _, window = mux.spawn_window({
+		domain = "CurrentPaneDomain",
+	})
+	window:gui_window():maximize()
 end)
 
 wezterm.on("update-right-status", function(window, pane)
@@ -32,8 +30,6 @@ config.font = wezterm.font_with_fallback({
 })
 config.font_size = 11.0
 
-
-
 config.use_dead_keys = false
 config.scrollback_lines = 5000
 config.adjust_window_size_when_changing_font_size = false
@@ -54,7 +50,7 @@ config.background = {
 		vertical_align = "Middle",
 		horizontal_align = "Center",
 		hsb = {
-			brightness = 0.02,
+			brightness = 0.01,
 		},
 	},
 }
@@ -64,10 +60,10 @@ config.keys = {
 	{ key = "v", mods = "CTRL|ALT|SHIFT", action = act.SplitVertical({ domain = "CurrentPaneDomain" }) },
 	{ key = "b", mods = "CTRL|ALT|SHIFT", action = act.SplitHorizontal({ domain = "CurrentPaneDomain" }) },
 	{ key = "q", mods = "CTRL|ALT|SHIFT", action = act.CloseCurrentPane({ confirm = false }) },
-	{ key = "h", mods = "CTRL|ALT|SHIFT", action = act.AdjustPaneSize {"Left",5} },
-	{ key = "l", mods = "CTRL|ALT|SHIFT", action = act.AdjustPaneSize {"Right",5} },
-	{ key = "j", mods = "CTRL|ALT|SHIFT", action = act.AdjustPaneSize {"Down",5} },
-	{ key = "k", mods = "CTRL|ALT|SHIFT", action = act.AdjustPaneSize {"Up",5} },
+	{ key = "h", mods = "CTRL|ALT|SHIFT", action = act.AdjustPaneSize({ "Left", 5 }) },
+	{ key = "l", mods = "CTRL|ALT|SHIFT", action = act.AdjustPaneSize({ "Right", 5 }) },
+	{ key = "j", mods = "CTRL|ALT|SHIFT", action = act.AdjustPaneSize({ "Down", 5 }) },
+	{ key = "k", mods = "CTRL|ALT|SHIFT", action = act.AdjustPaneSize({ "Up", 5 }) },
 	{ key = "h", mods = "LEADER", action = act.ActivatePaneDirection("Left") },
 	{ key = "l", mods = "LEADER", action = act.ActivatePaneDirection("Right") },
 	{ key = "j", mods = "LEADER", action = act.ActivatePaneDirection("Down") },
